@@ -39,6 +39,12 @@ body {
 	margin: 0 auto;
 }
 
+h1,
+h2,
+h3 {
+	margin: 5px 0 8px;
+}
+
 p {
 	margin: 15px 0 10px;
 }
