@@ -6,11 +6,85 @@
 	<link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-	<header>
-		<h1>Diffie-Hellman Key Exchange</h1>
-		<h2>Tri Ahmad Irfan - 1306398983</h2>
-		<h3>Asisten: Rayhan Anandya</h3>
-	</header>
+	<div class="row">
+		<div class="col-100">
+			<header>
+				<h1>Diffie-Hellman Key Exchange</h1>
+				<h2>Tri Ahmad Irfan - 1306398983</h2>
+				<h3>Asisten: Rayhan Anandya</h3>
+			</header>			
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-50">
+			<h3>Tentang Algoritma Diffie-Hellman</h3>
+			<p>Algoritma Diffie-Hellman Key Exchange adalah sebuah algoritma untuk mengirim data rahasia melalui jalur komunikasi yang tidak aman. Inti dari algoritma ini adalah kedua belah pihak (pengirim dan penerima) telah setuju untuk menggunakan sebuah kunci bersama (shared key) sedemikian sehingga tidak ada pihak lain yang dapat mendapatkan kunci ini.</p>
+		</div>
+		<div class="col-50"></div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<h3>Langkah Algoritma Diffie-Hellman</h3>
+			<ul>
+				<li>A dan B menyetujui sebuah bilangan prima p dan sebuah angka q</li>
+				<li>A memilih sebuah bilangan rahasia a, dan mengirim sebuah kode publik kepada B. Kode publik tersebut adalah P<sub>A</sub> = (q^a) mod p</li>
+				<li>B memilih sebuah bilangan rahasia b, dan mengirim sebuah kode publik kepada A. Kode publik tersebut adalah P<sub>B</sub> = (q^b) mod p</li>
+				<li>A menghitung shared key S = (P<sub>B</sub>^a) mod p</li>
+				<li>B menghitung shared key S = (P<sub>A</sub>^b) mod p</li>
+				<li>Perhatikan bahwa A dan B mendapatkan shared key yang sama tanpa harus langsung mengirimkan angkanya</li>
+				<li>A dan B kemudian dapat berkomunikasi dengan memanfaatkan shared key tersebut</li>
+			</ul>
+		</div>
+		<div class="col-50">
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="col-50">
+			<h3>Contoh Langkah Algoritma Diffie-Hellman</h3>
+			<ul>
+				<li>A dan B menyetujui p = 23 dan q = 5</li>
+				<li>A memilih a = 6 dan mengirimkan P<sub>A</sub> = 5^6 mod 23 = 8</li>
+				<li>B memilih b = 15 dan mengirimkan P<sub>B</sub> = 5^15 mod 23 = 19</li>
+				<li>A menghitung shared key S = 19^6 mod 23 = 2</li>
+				<li>B menghitung shared key S = 8^15 mod 23 = 2</li>
+				<li>A dan B mendapatkan shared key yang sama</li>
+			</ul>
+		</div>
+		<div class="col-50">
+			<h3>Penjelasan Algoritma Diffie-Hellman</h3>
+			<ul>
+				<li>A menghitung shared key S dengan cara 19^6 mod 23</li>
+				<li>19 didapatkan dari 5^15 mod 23</li>
+				<li>Berarti A menghitung S = 5^15^6 mod 23</li>
+				<li>B menghitung shared key S dengan cara 8^15 mod 23</li>
+				<li>8 didapatkan dari 5^6 mod 23</li>
+				<li>Berarti B menghitung S = 5^6^15 mod 23</li>
+				<li>Perhatikan bahwa sesuai dengan sifat komutatif perpangkatan, 5^6^15 = 5^15^6</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col-100">
+			<h3>Video Diffie-Hellman</h3>
+			<div class="video-container">
+				<iframe frameborder="0" scrolling="no" src="https://www.khanacademy.org/embed_video?v=M-0qt6tdHzk" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>			
+			</div>
+
+		</div>
+		<div class="col-50"></div>
+	</div>
+	<div class="row">
+		<div class="col-50">
+			<h3>Program Diffie Hellman</h3>
+			<p>Silakan isi input yang dibutuhkan</p>
+		</div>
+		<div class="col-50">
+		</div>
+
+	</div>
 	<div class="row">
 		<div class="col-50">
 			<p>Masukkan p = <input type="text" id="p"></p>
@@ -43,9 +117,15 @@
 		</div>
 	</div>
 
-
 	<footer>
-		
+		<div class="row">
+			<div class="col-50">
+				
+			</div>
+			<div class="col-50">
+				<p><em>2014. &copy; Tri Ahmad Irfan</em></p>
+			</div>
+		</div>		
 	</footer>
 	<script src="js/jquery.min.js"></script>
 	<script src="js/algorithm.js"></script>

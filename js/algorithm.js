@@ -50,7 +50,6 @@ function dekripsi(message, shift) {
 	return enkripsi(message, (26-shift) % 26);
 }
 
-
 // Event Listener untuk menghitung kode publik A
 $('#hitung-kode-publik-a').click(function() {
 	var p = $('#p').val(),
