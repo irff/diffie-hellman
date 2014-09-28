@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Diffie-Hellman Key Exchange</title>
+	<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+	<header>
+		<h1>Diffie-Hellman Key Exchange</h1>
+		<h2>Tri Ahmad Irfan - 1306398983</h2>
+		<h3>Asisten: Rayhan Anandya</h3>
+	</header>
+	<div class="row">
+		<div class="col-50">
+			<p>Masukkan p = <input type="text" id="p"></p>
+			<p>Masukkan q = <input type="text" id="q"></p>
+
+			<p>Masukkan bilangan rahasia A = <input type="text" id="A"> </p>
+			<p>Hitung kode publik A untuk dikirim ke B = <span id="kode-publik-a"></span></p>
+			<button id="hitung-kode-publik-a">Hitung</button>
+			
+
+			<p>Masukkan bilangan rahasia B <input type="text" id="B"></p>
+			<p>Hitung kode publik B untuk dikirim ke A = <span id="kode-publik-b"></span></p>
+			<button id="hitung-kode-publik-b">Hitung</button>
+
+			<p>Hitung shared key oleh A = <span id="shared-key-a"></span></p>
+			<button id="hitung-shared-key-a">Hitung</button>
+
+			<p>Hitung shared key oleh B = <span id="shared-key-b"></span></p>
+			<button id="hitung-shared-key-b">Hitung</button>			
+		</div>
+		<div class="col-50">
+			<p>Masukkan pesan asli yang akan dienkripsi oleh A</p>
+			<textarea id="pesan-asli-a" rows="4"></textarea>
+
+			<p>Pesan yang telah dienkripsi dikirim dari A ke B</p>
+			<textarea id="pesan-terenkripsi" rows="4"></textarea>
+
+			<p>Pesan yang telah didekripsi oleh B</p>
+			<textarea id="pesan-terdekripsi" rows="4"></textarea>			
+		</div>
+	</div>
+
+
+	<footer>
+		
+	</footer>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/algorithm.js"></script>
+</body>
+</html>
