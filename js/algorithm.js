@@ -6,22 +6,27 @@ function pangkat(a, b, p) {
 	else return (x * x) % p;
 }
 
+// Fungsi untuk menghitung kode publik oleh A
 function hitungKodePublikA(q, bilangan_rahasia_a, p) {
 	return pangkat(q, bilangan_rahasia_a, p);
 }
 
+// Fungsi untuk menghitung kode publik oleh B
 function hitungKodePublikB(q, bilangan_rahasia_b, p) {
 	return pangkat(q, bilangan_rahasia_b, p);
 }
 
+// Fungsi untuk menghitung shared key oleh A
 function hitungSharedKeyOlehA(kode_publik_b, bilangan_rahasia_a, p) {
 	return pangkat(kode_publik_b, bilangan_rahasia_a, p);
 }
 
+// Fungsi untuk menghitung shared key oleh B
 function hitungSharedKeyOlehB(kode_publik_a, bilangan_rahasia_b, p) {
 	return pangkat(kode_publik_a, bilangan_rahasia_b, p);
 }
 
+// Fungsi untuk mengenkripsi pesan dengan nilai pergeseran tertentu
 function enkripsi(message, shift) {
 	var result = "",
 		length = message.length;
@@ -40,10 +45,12 @@ function enkripsi(message, shift) {
 	return result;
 }
 
+// Fungsi untuk mendekripsi pesan dengan nilai pergeseran tertentu
 function dekripsi(message, shift) {
 	return enkripsi(message, (26-shift) % 26);
 }
 
+// Event Listener untuk menghitung kode publik A
 $('#hitung-kode-publik-a').click(function() {
 	var p = $('#p').val(),
 		q = $('#q').val(),
@@ -54,6 +61,7 @@ $('#hitung-kode-publik-a').click(function() {
 	$('#kode-publik-a').html(kode_publik_a);
 });
 
+// Event Listener untuk menghitung kode publik B
 $('#hitung-kode-publik-b').click(function() {
 	var p = $('#p').val(),
 		q = $('#q').val(),
@@ -64,6 +72,7 @@ $('#hitung-kode-publik-b').click(function() {
 	$('#kode-publik-b').html(kode_publik_b);
 });
 
+// Event Listener untuk menghitung shared key A
 $('#hitung-shared-key-a').click(function() {
 	var p = $('#p').val(),
 		A = $('#A').val(),
@@ -73,6 +82,7 @@ $('#hitung-shared-key-a').click(function() {
 	$('#shared-key-a').html(shared_key_a);
 });
 
+// Event Listener untuk menghitung shared key B
 $('#hitung-shared-key-b').click(function() {
 	var p = $('#p').val(),
 		B = $('#B').val(),
@@ -82,6 +92,7 @@ $('#hitung-shared-key-b').click(function() {
 	$('#shared-key-b').html(shared_key_b);
 });
 
+// Event Listener untuk mengenkripsi dan mendekripsi pesan
 $('#pesan-asli-a').on('change keyup paste', function() {
 	var pesan_asli_a = $('#pesan-asli-a').val(),
 		shared_key_a = $('#shared-key-a').html(),
